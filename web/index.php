@@ -52,3 +52,22 @@ $app->get('/db/', function() use($app) {
 });
 
 $app->run();
+
+fuction insertData ($stdName, $stdAge, $stdGender, $stdPhone){
+  $app->get('/db/', function() use($app) {
+    $st = $app['pdo']->prepare('INSERT INTO students (StdName, StdAge, StdGender, StdPhone) VALUES ('$stdName',$stdAge,'$stdGender','$stdPhone')');
+    $st->execute();
+
+    $StdName = array();
+    while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+      $app['monolog']->addDebug('Row ' . $row['StdName']);
+      $StdName[] = $row;
+    }
+
+    return $app['twig']->render('database.twig', array(
+      'StdName' => $StdName
+    ));
+  });
+
+  $app->run();
+}

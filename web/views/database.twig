@@ -5,7 +5,7 @@
 
 <ul>
 {% for n in StdName %}
-  <li> {{ n.StdName }} </li>
+  <li> {{ n.StdName, n.StdAge, n.StdGender, n.StdPhone }} </li>
 {% else %}
   <li>Nameless!</li>
 {% endfor %}
