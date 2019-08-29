@@ -51,7 +51,7 @@ $app->get('/', function() use($app) {
 //   ));
 // });
 
-$app->get('/db/', function() use($app) {
+$app->get('/male/', function() use($app) {
   $st = $app['pdo']->prepare('SELECT * FROM students');
   $st->execute();
 
