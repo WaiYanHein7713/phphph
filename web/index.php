@@ -47,7 +47,7 @@ $app->get('/db/', function() use($app) {
   }
 
   return $app['twig']->render('database.twig', array(
-    'names' => $names
+    'StdName' => $names
   ));
 });
 
