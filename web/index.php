@@ -40,14 +40,14 @@ $app->get('/db/', function() use($app) {
   $st = $app['pdo']->prepare('SELECT * FROM students');
   $st->execute();
 
-  $names = array();
+  $StdName = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
     $app['monolog']->addDebug('Row ' . $row['StdName']);
-    $names[] = $row;
+    $StdName[] = $row;
   }
 
   return $app['twig']->render('database.twig', array(
-    'StdName' => $names
+    'StdName' => $StdName
   ));
 });
 
