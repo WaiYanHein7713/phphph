@@ -36,23 +36,8 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
-$app->get('/database/', function() use($app) {
-  $st = $app['pdo']->prepare('SELECT * FROM students');
-  $st->execute();
-
-  $StdName = array();
-  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    $app['monolog']->addDebug('Row ' . $row['StdName']);
-    $StdName[] = $row;
-  }
-
-  return $app['twig']->render('database.twig', array(
-    'StdName' => $StdName
-  ));
-});
-
-// $app->get('/male/', function() use($app) {
-//   $st = $app['pdo']->prepare('SELECT * FROM students WHERE StdGender='Male'');
+// $app->get('/database/', function() use($app) {
+//   $st = $app['pdo']->prepare('SELECT * FROM students');
 //   $st->execute();
 //
 //   $StdName = array();
@@ -65,6 +50,21 @@ $app->get('/database/', function() use($app) {
 //     'StdName' => $StdName
 //   ));
 // });
+
+$app->get('/male/', function() use($app) {
+  $st = $app['pdo']->prepare('SELECT * FROM students WHERE StdGender='Male'');
+  $st->execute();
+
+  $StdName = array();
+  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+    $app['monolog']->addDebug('Row ' . $row['StdName']);
+    $StdName[] = $row;
+  }
+
+  return $app['twig']->render('database.twig', array(
+    'StdName' => $StdName
+  ));
+});
 
 $app->run();
 
