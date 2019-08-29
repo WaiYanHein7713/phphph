@@ -52,7 +52,7 @@ $app->get('/', function() use($app) {
 // });
 
 $app->get('/male/', function() use($app) {
-  $st = $app['pdo']->prepare("SELECT * FROM students WHERE StdName = 'Thaw Lay'");
+  $st = $app['pdo']->prepare("SELECT StdName FROM students WHERE StdName='Thaw Lay'");
   $st->execute();
 
   $StdName = array();
