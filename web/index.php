@@ -52,7 +52,7 @@ $app->get('/', function() use($app) {
 // });
 
 $app->get('/male/', function() use($app) {
-  $st = $app['pdo']->prepare("SELECT * FROM students WHERE studnet.StdGender = 'Female'");
+  $st = $app['pdo']->prepare("SELECT * FROM students WHERE students.StdGender = 'Female'");
   $st->execute();
 
   $StdName = array();
