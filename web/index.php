@@ -51,17 +51,29 @@ $app->get('/view/', function() use($app) {
   ));
 });
 
-$app->('/insert/', function() use($app, Request $request) {
-  $sql = 'INSERT INTO students(StdName, StdAge, StdGender, StdPhone) VALUES (:stdName, :stdAge, :stdGender, :stdPhone)';
-  $st = $app['pdo']->prepare($sql);
+// $app->('/insert/', function() use($app, Request $request) {
+//   $sql = 'INSERT INTO students(StdName, StdAge, StdGender, StdPhone) VALUES (:stdName, :stdAge, :stdGender, :stdPhone)';
+//   $st = $app['pdo']->prepare($sql);
+//
+//   $st->bindValue(':stdName', 'Kaung Sett Thu');
+//   $st->bindValue(':stdAge', 19);
+//   $st->bindValue(':stdName', 'Male');
+//   $st->bindValue(':stdName', '09 950234698');
+//   $st->execute();
+//
+//   //return $this->pdo->lastInsertId('students_id_seq');
+// });
 
-  $st->bindValue(':stdName', 'Kaung Sett Thu');
-  $st->bindValue(':stdAge', 19);
-  $st->bindValue(':stdName', 'Male');
-  $st->bindValue(':stdName', '09 950234698');
-  $st->execute();
+$app->get('/insert',function() use $app {
 
-  //return $this->pdo->lastInsertId('students_id_seq');
+    $app['pdo']->insert('students', array(
+        'StdName' => 'Kaung Sett Thu',
+        'StdAge' => 19,
+        'StdGender' => 'Male',
+        'StdPhone' => '09 950238593'
+      )
+    );
+
 });
 
 $app->run();
