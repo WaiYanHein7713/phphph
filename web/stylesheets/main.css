@@ -8,23 +8,45 @@ h1 {
 
 .insert-db {
   width: 50%;
-  height: 300px;
+  height: 600px;
+  padding-left: 50px;
   background: yellow;
   float: left;
 }
 
 .select-db {
   width: 50%;
-  height: 150px;
+  height: 300px;
   background: blue;
+  text-align: center;
   float: left;
 }
 
 .delete-db {
   width: 50%;
-  height: 150px;
+  height: 300px;
   background: red;
+  padding-left: 50px;
   float: left;
+}
+
+input[type=text] {
+  margin-top: 5px;
+  margin-bottom: 10px;
+  margin-left: 10px;
+  padding: 7px;
+}
+
+button {
+  padding: 10px;
+  text-align: center;
+  margin: 7px;
+}
+
+input[type=submit] {
+  padding: 10px;
+  text-align: center;
+  margin: 7px;
 }
 /* .jumbotron {
   background: #532F8C;

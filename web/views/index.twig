@@ -3,33 +3,26 @@
 {% block content %}
 
 <div class = "insert-db">
-
+  <form action="/insert/" method="get">
+    Name : <br> <input type="text" name="name"><br>
+    Age: <br><input type="text" name="age"><br>
+    Gender: <br><input type="text" name="gender"><br>
+    Phone: <br><input type="text" name="phone"><br>
+    <input type="submit">
+    </form>
 </div>
 
 <div class = "select-db">
-
+  <a href="/display/"><button>View All Students</button></a>
+  <a href="/male/"><button>View Male Students</button></a>
+  <a href="/female/"><button>View Female Students</button></a>
 </div>
 
 <div class = "delete-db">
-
+  <form action="/delete/" method="get">
+    Name: <br><input type="text" name="name"><br>
+    <input type="submit">
+    </form>
 </div>
-
-<form action="/insert/" method="get">
-  Name: <input type="text" name="name"><br>
-  Age: <input type="text" name="age"><br>
-  Gender: <input type="text" name="gender"><br>
-  Phone: <input type="text" name="phone"><br>
-
-<input type="submit">
-
-</form>
-
-<form action="/delete/" method="get">
-  Name: <input type="text" name="name"><br>
-<input type="submit">
-</form>
-
-<a href="/display/">Click me</a>
-
 
 {% endblock %}
