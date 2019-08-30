@@ -55,6 +55,9 @@ $app->get('/add/', function() use($app) {
   $st = $app['pdo']->prepare("INSERT INTO students (\"StdName\",\"StdAge\",\"StdGender\",\"StdPhone\") VALUES ('Kaung Sett Thu', 19, 'Male', '09 950238593')");
   $st->execute();
 
+  $st = $app['pdo']->prepare("SELECT * FROM students);
+  $st->execute();
+
   $StdName = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
     $app['monolog']->addDebug('Row ' . $row['StdName']);
