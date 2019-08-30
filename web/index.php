@@ -37,11 +37,7 @@ $app->get('/', function() use($app) {
 });
 
 $app->get('/view/', function() use($app) {
-  $st = $app['pdo']->query("INSERT INTO students (StdName, StdAge, StdGender, StdPhone) VALUES (:stdName, :stdAge, :stdGender, :stdPhone)");
-    $st->bindValue(':stdName', 'Kaung Sett Thu');
-    $st->bindValue(':stdAge', 19);
-    $st->bindValue(':stdName', 'Male');
-    $st->bindValue(':stdName', '09 950234698');
+  $st = $app['pdo']->query("INSERT INTO students (StdName, StdAge, StdGender, StdPhone) VALUES ('Kaung Sett Thu',19,'Male','09 950234698')");
   //$st->execute();
 
   $StdName = array();
