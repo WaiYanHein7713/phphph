@@ -55,7 +55,7 @@ $app->get('/add/', function() use($app) {
   $st = $app['pdo']->prepare("INSERT INTO students (\"StdName\",\"StdAge\",\"StdGender\",\"StdPhone\") VALUES ('Kaung Sett Thu', 19, 'Male', '09 950238593')");
   $st->execute();
 
-  $st = $app['pdo']->prepare("SELECT * FROM students");
+  $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
   $st->execute();
 
   $StdName = array();
