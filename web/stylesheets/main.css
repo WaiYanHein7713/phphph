@@ -29,7 +29,7 @@ h1 {
   padding-top: 50px;
   width: 45%;
   height: 600px;
-  padding-left: 80px;
+  padding-left: 100px;
   background: #ddd;
   float: left;
 }
@@ -46,12 +46,12 @@ h1 {
 
 .delete-db {
   margin-right: 4%;
-  margin-top: 50px;
+  margin-top: 20px;
   padding-top: 50px;
   width: 45%;
-  height: 250px;
+  height: 280px;
   background: #ddd;
-  padding-left: 80px;
+  padding-left: 100px;
   float: left;
 }
 
@@ -61,9 +61,9 @@ form {
 
 input[type=text] {
   width: 75%;
-  margin-top: 5px;
-  margin-bottom: 10px;
-  margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-left: 15px;
   padding: 7px;
 }
 
@@ -84,7 +84,7 @@ input[type=submit] {
   background: #333;
   color: #f1f1f1;
   text-align: center;
-  margin: 7px;
+  margin: 20px;
 }
 /* .jumbotron {
   background: #532F8C;
