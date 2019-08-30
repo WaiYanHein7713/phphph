@@ -37,8 +37,12 @@ $app->get('/', function() use($app) {
 });
 
 $app->get('/view/', function() use($app) {
-  $st = $app['pdo']->prepare("SELECT * FROM students WHERE StdName=\'Thaw Lay\'");
-  $st->execute();
+  $st = $app['pdo']->query("INSERT INTO students (StdName, StdAge, StdGender, StdPhone) VALUES (:stdName, :stdAge, :stdGender, :stdPhone)");
+    $st->bindValue(':stdName', 'Kaung Sett Thu');
+    $st->bindValue(':stdAge', 19);
+    $st->bindValue(':stdName', 'Male');
+    $st->bindValue(':stdName', '09 950234698');
+  //$st->execute();
 
   $StdName = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
