@@ -132,7 +132,8 @@ $app->get('/insert/', function() use($app) {
 });
 
 $app->get('/delete/', function() use($app) {
-  $name = $GLOBALS['stdName'];
+  // $name = $GLOBALS['stdName'];
+  $name = $_GET["name"];
   $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$name'");
   $st->execute();
 
