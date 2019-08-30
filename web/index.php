@@ -37,7 +37,7 @@ $app->get('/', function() use($app) {
 });
 
 $app->get('/database/', function() use($app) {
-  $st = $app['pdo']->prepare('SELECT * FROM students WHERE StdGender=="Male"');
+  $st = $app['pdo']->prepare("SELECT * FROM students WHERE StdGender==Male");
   $st->execute();
 
   $StdName = array();
