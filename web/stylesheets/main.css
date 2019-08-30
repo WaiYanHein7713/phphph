@@ -1,5 +1,5 @@
 body {
-  background: #777;
+  background: #333;
 }
 
 table {
@@ -9,7 +9,7 @@ table {
 
 th {
   font-weight: bolder;
-  background: #080808;
+  background: #333;
   color: #f1f1f1;
   text-align: center;
   padding: 12px;
@@ -30,7 +30,7 @@ h1 {
   width: 45%;
   height: 600px;
   padding-left: 80px;
-  background: #080808;
+  background: #ddd;
   float: left;
 }
 
@@ -39,7 +39,7 @@ h1 {
   padding-top: 50px;
   width: 45%;
   height: 300px;
-  background: #080808;
+  background: #ddd;
   text-align: center;
   float: left;
 }
@@ -49,7 +49,7 @@ h1 {
   padding-top: 50px;
   width: 45%;
   height: 300px;
-  background: #080808;
+  background: #ddd;
   padding-left: 80px;
   float: left;
 }
@@ -70,7 +70,7 @@ button {
   width: 75%;
   padding: 10px;
   font-weight: bolder;
-  background: #777;
+  background: #333;
   color: #f1f1f1;
   text-align: center;
   margin: 7px;
@@ -80,7 +80,7 @@ input[type=submit] {
   width: 75%;
   padding: 10px;
   font-weight: bolder;
-  background: #777;
+  background: #333;
   color: #f1f1f1;
   text-align: center;
   margin: 7px;
