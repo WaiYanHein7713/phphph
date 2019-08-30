@@ -37,7 +37,7 @@ $app->get('/', function() use($app) {
 });
 
 $app->get('/view/', function() use($app) {
-  $st = $app['pdo']->prepare("SELECT StdName FROM students");
+  $st = $app['pdo']->prepare("SELECT * FROM students");
   $st->execute();
 
   $StdName = array();
