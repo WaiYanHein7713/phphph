@@ -46,10 +46,10 @@ h1 {
 
 .delete-db {
   margin-right: 4%;
-  margin-top: 20px;
+  margin-top: 32px;
   padding-top: 50px;
   width: 45%;
-  height: 280px;
+  height: 218px;
   background: #ddd;
   padding-left: 100px;
   float: left;
@@ -84,7 +84,7 @@ input[type=submit] {
   background: #333;
   color: #f1f1f1;
   text-align: center;
-  margin: 20px;
+  margin: 18px;
 }
 /* .jumbotron {
   background: #532F8C;
