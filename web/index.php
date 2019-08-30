@@ -2,25 +2,25 @@
 
 require('../vendor/autoload.php');
 
-$nametemp = $_GET["name"];
-$agetemp = $_GET["age"];
-$gendertemp = $_GET["gender"];
-$phonetemp = $_GET["phone"];
-
-$GLOBALS['stdName'] = $nametemp;
-$GLOBALS['stdAge'] = $agetemp;
-$GLOBALS['stdGender'] = $gendertemp;
-$GLOBALS['stdPhone'] = $phonetemp;
+// $nametemp = $_GET["name"];
+// $agetemp = $_GET["age"];
+// $gendertemp = $_GET["gender"];
+// $phonetemp = $_GET["phone"];
+//
+// $GLOBALS['stdName'] = $nametemp;
+// $GLOBALS['stdAge'] = $agetemp;
+// $GLOBALS['stdGender'] = $gendertemp;
+// $GLOBALS['stdPhone'] = $phonetemp;
 
 // $GLOBALS['stdName'] = "Kaung Sett Thu";
 // $GLOBALS['stdAge'] = 19;
 // $GLOBALS['stdGender'] = "Male";
 // $GLOBALS['stdPhone'] = "09 950249109";
 
-echo $GLOBALS['stdName'];
-echo $GLOBALS['stdAge'];
-echo $GLOBALS['stdGender'];
-echo $GLOBALS['stdPhone'];
+// echo $GLOBALS['stdName'];
+// echo $GLOBALS['stdAge'];
+// echo $GLOBALS['stdGender'];
+// echo $GLOBALS['stdPhone'];
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -102,10 +102,14 @@ $app->get('/female/', function() use($app) {
 });
 
 $app->get('/insert/', function() use($app) {
-  $name = $GLOBALS['stdName'];
-  $age = $GLOBALS['stdAge'];
-  $gender = $GLOBALS['stdGender'];
-  $phone = $GLOBALS['stdPhone'];
+  // $name = $GLOBALS['stdName'];
+  // $age = $GLOBALS['stdAge'];
+  // $gender = $GLOBALS['stdGender'];
+  // $phone = $GLOBALS['stdPhone'];
+  $name = $_GET["name"];
+  $age = $_GET["age"];
+  $gender = $_GET["gender"];
+  $phone = $_GET["phone"];
   echo $name;
   echo $age;
   echo $gender;
