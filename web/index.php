@@ -2,6 +2,12 @@
 
 require('../vendor/autoload.php');
 
+$GLOBALS['stdName'] = $_GET["name"];
+$GLOBALS['stdAge'] = $_GET["age"];
+$GLOBALS['stdGender'] = $_GET["gender"];
+$GLOBALS['stdPhone'] = $_GET["phone"];
+include '/insert/'
+
 $app = new Silex\Application();
 $app['debug'] = true;
 
