@@ -36,7 +36,7 @@ $app->get('/', function() use($app) {
   return $app['twig']->render('index.twig');
 });
 
-$app->get('/view/', function() use($app) {
+$app->get('/display/', function() use($app) {
   $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
   $st->execute();
 
@@ -51,7 +51,7 @@ $app->get('/view/', function() use($app) {
   ));
 });
 
-$app->get('/add/', function() use($app) {
+$app->get('/insert/', function($stdName, $stdAge, $stdGender, $stdPhone) use($app) {
   $st = $app['pdo']->prepare("INSERT INTO students (\"StdName\",\"StdAge\",\"StdGender\",\"StdPhone\") VALUES ('Kaung Sett Thu', 19, 'Male', '09 950238593')");
   $st->execute();
 
@@ -69,6 +69,23 @@ $app->get('/add/', function() use($app) {
   ));
 });
 
+$app->get('/delete/', function($stdName) use($app) {
+  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = 'Kaung Sett Thu'");
+  $st->execute();
+
+  $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
+  $st->execute();
+
+  $StdName = array();
+  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+    $app['monolog']->addDebug('Row ' . $row['StdName']);
+    $StdName[] = $row;
+  }
+
+  return $app['twig']->render('database.twig', array(
+    'StdName' => $StdName
+  ));
+});
 
 
 // $app->get('/insert',function() use $app {
