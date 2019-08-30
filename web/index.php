@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-  </head>
-  <body>
-    Welcome <?php echo $_GET["name"]; ?><br>
-    Your email address is: <?php echo $_GET["email"]; ?>
-  </body>
-</html>
-
 <?php
 
 require('../vendor/autoload.php');
 
-// $GLOBALS['stdName'] = $_POST["name"];
-// $GLOBALS['stdAge'] = $_POST["age"];
-// $GLOBALS['stdGender'] = $_POST["gender"];
-// $GLOBALS['stdPhone'] = $_POST["phone"]';
+$GLOBALS['stdName'] = $_GET["name"];
+$GLOBALS['stdAge'] = $_GET["age"];
+$GLOBALS['stdGender'] = $_GET["gender"];
+$GLOBALS['stdPhone'] = $_GET["phone"]';
 
 $app = new Silex\Application();
 $app['debug'] = true;
