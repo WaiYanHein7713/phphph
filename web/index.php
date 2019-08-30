@@ -6,9 +6,8 @@ $GLOBALS['stdName'] = $_GET["name"];
 $GLOBALS['stdAge'] = $_GET["age"];
 $GLOBALS['stdGender'] = $_GET["gender"];
 $GLOBALS['stdPhone'] = $_GET["phone"];
-if (name != null) {
-  include '/insert/'
-}
+
+echo $GLOBALS['stdName'];
 
 $app = new Silex\Application();
 $app['debug'] = true;
