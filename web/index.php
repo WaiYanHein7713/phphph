@@ -2,6 +2,8 @@
 
 require('../vendor/autoload.php');
 
+$stdName = 'Kaung Sett Thu';
+
 $app = new Silex\Application();
 $app['debug'] = true;
 
@@ -51,7 +53,7 @@ $app->get('/display/', function() use($app) {
   ));
 });
 
-$app->get('/insert/', function($stdName, $stdAge, $stdGender, $stdPhone) use($app) {
+$app->get('/insert/', function() use($app) {
   $st = $app['pdo']->prepare("INSERT INTO students (\"StdName\",\"StdAge\",\"StdGender\",\"StdPhone\") VALUES ('Kaung Sett Thu', 19, 'Male', '09 950238593')");
   $st->execute();
 
@@ -69,9 +71,8 @@ $app->get('/insert/', function($stdName, $stdAge, $stdGender, $stdPhone) use($ap
   ));
 });
 
-$app->get('/delete/', function() use($app) {
-  $stdName = 'Kaung Sett Thu';
-  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = 'Kaung Sett Thu'");
+$app->get('/delete/', function($stdName) use($app) {
+  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$stdName'");
   $st->execute();
 
   $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
