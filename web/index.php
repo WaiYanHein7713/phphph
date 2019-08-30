@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    Welcome <?php echo $_GET["name"]; ?><br>
+    Your email address is: <?php echo $_GET["email"]; ?>
+  </body>
+</html>
+
 <?php
 
 require('../vendor/autoload.php');
@@ -9,9 +21,6 @@ require('../vendor/autoload.php');
 
 $app = new Silex\Application();
 $app['debug'] = true;
-
-Welcome <?php echo $_GET["name"]; ?><br>
-Your email address is: <?php echo $_GET["email"]; ?>
 
 $dbopts = parse_url(getenv('DATABASE_URL'));
 $app->register(new Csanquer\Silex\PdoServiceProvider\Provider\PDOServiceProvider('pdo'),
