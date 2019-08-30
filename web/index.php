@@ -53,7 +53,7 @@ $app->get('/view/', function() use($app) {
 
 $app->('/insert/', function() use($app, Request $request) {
   $sql = 'INSERT INTO students(StdName, StdAge, StdGender, StdPhone) VALUES (:stdName, :stdAge, :stdGender, :stdPhone)';
-  $st = $app['pdo']->prepare();
+  $st = $app['pdo']->prepare($sql);
 
   $st->bindValue(':stdName', 'Kaung Sett Thu');
   $st->bindValue(':stdAge', 19);
