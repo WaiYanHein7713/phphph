@@ -2,7 +2,7 @@
 
 require('../vendor/autoload.php');
 
-$stdName = 'Kaung Sett Thu';
+$GLOBALS['stdName'] = 'Kaung Sett Thu';
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -72,7 +72,7 @@ $app->get('/insert/', function() use($app) {
 });
 
 $app->get('/delete/', function() use($app) {
-  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$stdName'");
+  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = \'$GLOBALS['stdName']\'");
   $st->execute();
 
   $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
