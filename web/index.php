@@ -69,9 +69,9 @@ $app->get('/insert/', function($stdName, $stdAge, $stdGender, $stdPhone) use($ap
   ));
 });
 
-$app->get('/delete/', function() use($app, Request $request) {
+$app->get('/delete/', function() use($app) {
   $stdName = 'Kaung Sett Thu';
-  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$request'");
+  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = 'Kaung Sett Thu'");
   $st->execute();
 
   $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
