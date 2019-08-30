@@ -34,3 +34,6 @@
 .jumbotron .lang-logo img {
   max-width: 100%;
 }
+td {
+  padding: 10px;
+}
