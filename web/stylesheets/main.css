@@ -1,3 +1,9 @@
+td {
+  padding: 10px;
+}
+h1 {
+  color: #f1f1f1;
+}
 .jumbotron {
   background: #532F8C;
   color: white;
@@ -33,7 +39,4 @@
 }
 .jumbotron .lang-logo img {
   max-width: 100%;
-}
-td {
-  padding: 10px;
 }
