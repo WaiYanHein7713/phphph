@@ -3,7 +3,16 @@ body {
 }
 
 table {
+  padding-top: 80px;
   background: #eee;
+}
+
+th {
+  font-weight: bolder;
+  background: #777;
+  color: #f1f1f1;
+  text-align: center;
+  padding: 12px;
 }
 
 td {
@@ -44,6 +53,10 @@ h1 {
   float: left;
 }
 
+form {
+  font-weight: bold;
+}
+
 input[type=text] {
   width: 75%;
   margin-top: 5px;
@@ -55,6 +68,9 @@ input[type=text] {
 button {
   width: 75%;
   padding: 10px;
+  font-weight: bolder;
+  background: #777;
+  color: #f1f1f1;
   text-align: center;
   margin: 7px;
 }
@@ -62,6 +78,9 @@ button {
 input[type=submit] {
   width: 75%;
   padding: 10px;
+  font-weight: bolder;
+  background: #777;
+  color: #f1f1f1;
   text-align: center;
   margin: 7px;
 }
