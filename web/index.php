@@ -51,26 +51,18 @@ $app->get('/view/', function() use($app) {
   ));
 });
 
-try {
-  $app->get('/insert/', function() use($app) {
-    $st = $app['pdo']->prepare("INSERT INTO students (StdName, StdAge, StdGender, StdPhone) VALUES ('Kaung Sett Thu',19,'Male','09 956890002')");
-    $st->execute();
+$app->('/insert/', function() use($app, Request $request) {
+  $sql = 'INSERT INTO students(StdName, StdAge, StdGender, StdPhone) VALUES (:stdName, :stdAge, :stdGender, :stdPhone)';
+  $st = $app['pdo']->prepare();
 
-    $StdName = array();
-    while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-      $app['monolog']->addDebug('Row ' . $row['StdName']);
-      $StdName[] = $row;
-    }
+  $st->bindValue(':stdName', 'Kaung Sett Thu');
+  $st->bindValue(':stdAge', 19);
+  $st->bindValue(':stdName', 'Male');
+  $st->bindValue(':stdName', '09 950234698');
+  $st->execute();
 
-    return $app['twig']->render('database.twig', array(
-      'StdName' => $StdName
-    ));
-  });
-
-}
-catch (PDOException $e) {
-  echo "Fail to connect";
-}
+  //return $this->pdo->lastInsertId('students_id_seq');
+});
 
 $app->run();
 
