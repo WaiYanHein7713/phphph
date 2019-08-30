@@ -56,6 +56,36 @@ $app->get('/display/', function() use($app) {
   ));
 });
 
+$app->get('/male/', function() use($app) {
+  $st = $app['pdo']->prepare("SELECT * FROM students WHERE \"StdGender\" = 'Male' ORDER BY \"StdName\" ASC");
+  $st->execute();
+
+  $StdName = array();
+  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+    $app['monolog']->addDebug('Row ' . $row['StdName']);
+    $StdName[] = $row;
+  }
+
+  return $app['twig']->render('database.twig', array(
+    'StdName' => $StdName
+  ));
+});
+
+$app->get('/female/', function() use($app) {
+  $st = $app['pdo']->prepare("SELECT * FROM students WHERE \"StdGender\" = 'Female' ORDER BY \"StdName\" ASC");
+  $st->execute();
+
+  $StdName = array();
+  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+    $app['monolog']->addDebug('Row ' . $row['StdName']);
+    $StdName[] = $row;
+  }
+
+  return $app['twig']->render('database.twig', array(
+    'StdName' => $StdName
+  ));
+});
+
 $app->get('/insert/', function() use($app) {
   $name = $GLOBALS['stdName'];
   $age = $GLOBALS['stdAge'];
