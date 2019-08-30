@@ -2,17 +2,25 @@
 
 require('../vendor/autoload.php');
 
-// $GLOBALS['stdName'] = $_GET["name"];
-// $GLOBALS['stdAge'] = $_GET["age"];
-// $GLOBALS['stdGender'] = $_GET["gender"];
-// $GLOBALS['stdPhone'] = $_GET["phone"];
+$nametemp = $_GET["name"];
+$agetemp = $_GET["age"];
+$gendertemp = $_GET["gender"];
+$phonetemp = $_GET["phone"];
 
-$GLOBALS['stdName'] = "Kaung Sett Thu";
-$GLOBALS['stdAge'] = 19;
-$GLOBALS['stdGender'] = "Male";
-$GLOBALS['stdPhone'] = "09 950249109";
+$GLOBALS['stdName'] = $nametemp;
+$GLOBALS['stdAge'] = $agetemp;
+$GLOBALS['stdGender'] = $gendertemp;
+$GLOBALS['stdPhone'] = $phonetemp;
+
+// $GLOBALS['stdName'] = "Kaung Sett Thu";
+// $GLOBALS['stdAge'] = 19;
+// $GLOBALS['stdGender'] = "Male";
+// $GLOBALS['stdPhone'] = "09 950249109";
 
 echo $GLOBALS['stdName'];
+echo $GLOBALS['stdAge'];
+echo $GLOBALS['stdGender'];
+echo $GLOBALS['stdPhone'];
 
 $app = new Silex\Application();
 $app['debug'] = true;
