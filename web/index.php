@@ -71,7 +71,7 @@ $app->get('/insert/', function() use($app) {
   ));
 });
 
-$app->get('/delete/', function($stdName) use($app) {
+$app->get('/delete/', function() use($app) {
   $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$stdName'");
   $st->execute();
 
