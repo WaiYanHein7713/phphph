@@ -2,10 +2,10 @@
 
 require('../vendor/autoload.php');
 
-$GLOBALS['stdName'] = $_POST["name"];
-$GLOBALS['stdAge'] = $_POST["age"];
-$GLOBALS['stdGender'] = $_POST["gender"];
-$GLOBALS['stdPhone'] = $_POST["phone"]';
+// $GLOBALS['stdName'] = $_POST["name"];
+// $GLOBALS['stdAge'] = $_POST["age"];
+// $GLOBALS['stdGender'] = $_POST["gender"];
+// $GLOBALS['stdPhone'] = $_POST["phone"]';
 
 $app = new Silex\Application();
 $app['debug'] = true;
