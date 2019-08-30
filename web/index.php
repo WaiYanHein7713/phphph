@@ -2,10 +2,10 @@
 
 require('../vendor/autoload.php');
 
-// $nametemp = $_GET["name"];
-// $agetemp = $_GET["age"];
-// $gendertemp = $_GET["gender"];
-// $phonetemp = $_GET["phone"];
+// $nametemp = $_POST["name"];
+// $agetemp = $_POST["age"];
+// $gendertemp = $_POST["gender"];
+// $phonetemp = $_POST["phone"];
 //
 // $GLOBALS['stdName'] = $nametemp;
 // $GLOBALS['stdAge'] = $agetemp;
@@ -106,10 +106,10 @@ $app->get('/insert/', function() use($app) {
   // $age = $GLOBALS['stdAge'];
   // $gender = $GLOBALS['stdGender'];
   // $phone = $GLOBALS['stdPhone'];
-  $name = $_GET["name"];
-  $age = $_GET["age"];
-  $gender = $_GET["gender"];
-  $phone = $_GET["phone"];
+  $name = $_POST["name"];
+  $age = $_POST["age"];
+  $gender = $_POST["gender"];
+  $phone = $_POST["phone"];
   echo $name;
   echo $age;
   echo $gender;
@@ -133,7 +133,7 @@ $app->get('/insert/', function() use($app) {
 
 $app->get('/delete/', function() use($app) {
   // $name = $GLOBALS['stdName'];
-  $name = $_GET["name"];
+  $name = $_POST["name"];
   $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$name'");
   $st->execute();
 
