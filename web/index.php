@@ -51,20 +51,26 @@ $app->get('/view/', function() use($app) {
   ));
 });
 
-$app->get('/insert/', function() use($app) {
-  $st = $app['pdo']->prepare("INSERT INTO students (StdName, StdAge, StdGender, StdPhone) VALUES ('Kaung Sett Thu',19,'Male','09 956890002')");
-  $st->execute();
+try {
+  $app->get('/insert/', function() use($app) {
+    $st = $app['pdo']->prepare("INSERT INTO students (StdName, StdAge, StdGender, StdPhone) VALUES ('Kaung Sett Thu',19,'Male','09 956890002')");
+    $st->execute();
 
-  $StdName = array();
-  while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    $app['monolog']->addDebug('Row ' . $row['StdName']);
-    $StdName[] = $row;
-  }
+    $StdName = array();
+    while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
+      $app['monolog']->addDebug('Row ' . $row['StdName']);
+      $StdName[] = $row;
+    }
 
-  return $app['twig']->render('database.twig', array(
-    'StdName' => $StdName
-  ));
-});
+    return $app['twig']->render('database.twig', array(
+      'StdName' => $StdName
+    ));
+  });
+
+}
+catch (PDOException $e) {
+  echo "Fail to connect";
+}
 
 $app->run();
 
