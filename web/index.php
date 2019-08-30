@@ -37,7 +37,7 @@ $app->get('/', function() use($app) {
 });
 
 $app->get('/view/', function() use($app) {
-  $st = $app['pdo']->prepare("SELECT * FROM students");
+  $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY StdName");
   $st->execute();
 
   $StdName = array();
@@ -64,17 +64,17 @@ $app->get('/view/', function() use($app) {
 //   //return $this->pdo->lastInsertId('students_id_seq');
 // });
 
-$app->get('/insert',function() use $app {
-
-    $app['pdo']->insert('students', array(
-        'StdName' => 'Kaung Sett Thu',
-        'StdAge' => 19,
-        'StdGender' => 'Male',
-        'StdPhone' => '09 950238593'
-      )
-    );
-
-});
+// $app->get('/insert',function() use $app {
+//
+//     $app['pdo']->insert('students', array(
+//         'StdName' => 'Kaung Sett Thu',
+//         'StdAge' => 19,
+//         'StdGender' => 'Male',
+//         'StdPhone' => '09 950238593'
+//       )
+//     );
+//
+// });
 
 $app->run();
 
