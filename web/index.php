@@ -3,9 +3,6 @@
 require('../vendor/autoload.php');
 
 // $nametemp = $_GET["name"];
-if ($_GET["name"] =! null){
-  header("Location: /insert/");
-}
 // $agetemp = $_GET["age"];
 // $gendertemp = $_GET["gender"];
 // $phonetemp = $_GET["phone"];
