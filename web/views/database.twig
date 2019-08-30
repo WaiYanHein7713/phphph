@@ -3,12 +3,28 @@
 {% block content %}
 <p>All Students :</p>
 
-<ul>
+<table>
+<tr>
+  <td>Name</td>
+  <td>Age</td>
+  <td>Gender</td>
+  <td>Phone</td>
+</tr>
 {% for n in StdName %}
-  <li> {{ n.StdName }} {{ n.StdAge }} {{ n.StdGender }} {{ n.StdPhone }} </li>
+<tr>
+  <td>{{ n.StdName }}</td>
+  <td>{{ n.StdAge }}</td>
+  <td>{{ n.StdGender }}</td>
+  <td>{{ n.StdPhone }}</td>
+</tr>
 {% else %}
-  <li>Nameless!</li>
+<tr>
+  <td>No Data</td>
+  <td>No Data</td>
+  <td>No Data</td>
+  <td>No Data</td>
+</tr>
 {% endfor %}
-</ul>
+</table>
 
 {% endblock %}
