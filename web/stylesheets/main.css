@@ -1,5 +1,9 @@
 body {
-  background: #666;
+  background: #777;
+}
+
+table {
+  background: #eee;
 }
 
 td {
@@ -13,19 +17,19 @@ h1 {
 .insert-db {
   margin: 15px;
   padding-top: 50px;
-  width: 40%;
+  width: 45%;
   height: 600px;
   padding-left: 50px;
-  background: #aaa;
+  background: #ddd;
   float: left;
 }
 
 .select-db {
   margin: 15px;
   padding-top: 50px;
-  width: 40%;
+  width: 45%;
   height: 300px;
-  background: #aaa;
+  background: #ddd;
   text-align: center;
   float: left;
 }
@@ -33,9 +37,9 @@ h1 {
 .delete-db {
   margin: 15px;
   padding-top: 50px;
-  width: 40%;
+  width: 45%;
   height: 300px;
-  background: #aaa;
+  background: #ddd;
   padding-left: 50px;
   float: left;
 }

@@ -110,10 +110,10 @@ $app->get('/insert/', function() use($app) {
   $age = $_GET["age"];
   $gender = $_GET["gender"];
   $phone = $_GET["phone"];
-  echo $name;
-  echo $age;
-  echo $gender;
-  echo $phone;
+  // echo $name;
+  // echo $age;
+  // echo $gender;
+  // echo $phone;
   $st = $app['pdo']->prepare("INSERT INTO students (\"StdName\",\"StdAge\",\"StdGender\",\"StdPhone\") VALUES ('$name', $age, '$gender', '$phone')");
   $st->execute();
 
