@@ -3,6 +3,9 @@
 require('../vendor/autoload.php');
 
 // $nametemp = $_POST["name"];
+if ($_POST["name"] =! null){
+  redirect("/insert/");
+}
 // $agetemp = $_POST["age"];
 // $gendertemp = $_POST["gender"];
 // $phonetemp = $_POST["phone"];
