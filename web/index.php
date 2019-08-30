@@ -73,7 +73,7 @@ $app->get('/insert/', function() use($app) {
 
 $app->get('/delete/', function() use($app) {
   $name = $GLOBALS['stdName'];
-  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$stdName'");
+  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$name'");
   $st->execute();
 
   $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
