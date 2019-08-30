@@ -1,5 +1,7 @@
 <?php
 
+$stdName = 'Kaung Sett Thu';
+
 require('../vendor/autoload.php');
 
 $app = new Silex\Application();
@@ -70,7 +72,7 @@ $app->get('/insert/', function($stdName, $stdAge, $stdGender, $stdPhone) use($ap
 });
 
 $app->get('/delete/', function($stdName) use($app) {
-  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = 'Kaung Sett Thu'");
+  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$stdName'");
   $st->execute();
 
   $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
