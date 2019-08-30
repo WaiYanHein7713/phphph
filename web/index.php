@@ -93,6 +93,10 @@ $app->get('/insert/', function() use($app) {
   $age = $GLOBALS['stdAge'];
   $gender = $GLOBALS['stdGender'];
   $phone = $GLOBALS['stdPhone'];
+  echo $name;
+  echo $age;
+  echo $gender;
+  echo $phone;
   $st = $app['pdo']->prepare("INSERT INTO students (\"StdName\",\"StdAge\",\"StdGender\",\"StdPhone\") VALUES ('$name', $age, '$gender', '$phone')");
   $st->execute();
 
