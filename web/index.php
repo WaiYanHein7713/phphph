@@ -7,15 +7,15 @@ $agetemp = $_GET["age"];
 $gendertemp = $_GET["gender"];
 $phonetemp = $_GET["phone"];
 
-// $GLOBALS['stdName'] = $nametemp;
-// $GLOBALS['stdAge'] = $agetemp;
-// $GLOBALS['stdGender'] = $gendertemp;
-// $GLOBALS['stdPhone'] = $phonetemp;
+$GLOBALS['stdName'] = $nametemp;
+$GLOBALS['stdAge'] = $agetemp;
+$GLOBALS['stdGender'] = $gendertemp;
+$GLOBALS['stdPhone'] = $phonetemp;
 
-$GLOBALS['stdName'] = "Kaung Sett Thu";
-$GLOBALS['stdAge'] = 19;
-$GLOBALS['stdGender'] = "Male";
-$GLOBALS['stdPhone'] = "09 950249109";
+// $GLOBALS['stdName'] = "Kaung Sett Thu";
+// $GLOBALS['stdAge'] = 19;
+// $GLOBALS['stdGender'] = "Male";
+// $GLOBALS['stdPhone'] = "09 950249109";
 
 echo $GLOBALS['stdName'];
 echo $GLOBALS['stdAge'];
