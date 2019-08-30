@@ -7,6 +7,9 @@ require('../vendor/autoload.php');
 // $GLOBALS['stdGender'] = $_POST["gender"];
 // $GLOBALS['stdPhone'] = $_POST["phone"]';
 
+Welcome <?php echo $_GET["name"]; ?><br>
+Your email address is: <?php echo $_GET["email"]; ?>
+
 $app = new Silex\Application();
 $app['debug'] = true;
 
