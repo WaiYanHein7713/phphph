@@ -1,5 +1,5 @@
 body {
-  background: #333;
+  background: #777;
 }
 
 table {
@@ -46,9 +46,10 @@ h1 {
 
 .delete-db {
   margin-right: 4%;
+  margin-top: 50px;
   padding-top: 50px;
   width: 45%;
-  height: 300px;
+  height: 250px;
   background: #ddd;
   padding-left: 80px;
   float: left;
