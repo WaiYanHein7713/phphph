@@ -3,6 +3,9 @@
 require('../vendor/autoload.php');
 
 $GLOBALS['stdName'] = 'Kaung Sett Thu';
+$GLOBALS['stdAge'] = 19;
+$GLOBALS['stdGender'] = 'Male';
+$GLOBALS['stdPhone'] = '09 950238593';
 
 $app = new Silex\Application();
 $app['debug'] = true;
@@ -54,7 +57,11 @@ $app->get('/display/', function() use($app) {
 });
 
 $app->get('/insert/', function() use($app) {
-  $st = $app['pdo']->prepare("INSERT INTO students (\"StdName\",\"StdAge\",\"StdGender\",\"StdPhone\") VALUES ('Kaung Sett Thu', 19, 'Male', '09 950238593')");
+  $name = $GLOBALS['stdName'];
+  $age = $GLOBALS['stdAge'];
+  $gender = $GLOBALS['stdGender'];
+  $phone = $GLOBALS['stdPhone'];
+  $st = $app['pdo']->prepare("INSERT INTO students (\"StdName\",\"StdAge\",\"StdGender\",\"StdPhone\") VALUES ('$name', $age, '$gender', '$phone')");
   $st->execute();
 
   $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
@@ -90,36 +97,6 @@ $app->get('/delete/', function() use($app) {
   ));
 });
 
-
-// $app->get('/insert',function() use $app {
-//
-//     $app['pdo']->insert('students', array(
-//         'StdName' => 'Kaung Sett Thu',
-//         'StdAge' => 19,
-//         'StdGender' => 'Male',
-//         'StdPhone' => '09 950238593'
-//       )
-//     );
-//
-// });
-
 $app->run();
 
-// fuction insertData ($stdName, $stdAge, $stdGender, $stdPhone){
-//   $app->get('/db/', function() use($app) {
-//     $st = $app['pdo']->prepare('INSERT INTO students (StdName, StdAge, StdGender, StdPhone) VALUES ('$stdName',$stdAge,'$stdGender','$stdPhone')');
-//     $st->execute();
-//
-//     $StdName = array();
-//     while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-//       $app['monolog']->addDebug('Row ' . $row['StdName']);
-//       $StdName[] = $row;
-//     }
-//
-//     return $app['twig']->render('database.twig', array(
-//       'StdName' => $StdName
-//     ));
-//   });
-//
-//   $app->run();
-// }
+?>
