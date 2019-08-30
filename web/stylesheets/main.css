@@ -12,7 +12,8 @@ h1 {
 
 .insert-db {
   margin: 15px;
-  width: 50%;
+  padding-top: 50px;
+  width: 40%;
   height: 600px;
   padding-left: 50px;
   background: #aaa;
@@ -21,7 +22,8 @@ h1 {
 
 .select-db {
   margin: 15px;
-  width: 50%;
+  padding-top: 50px;
+  width: 40%;
   height: 300px;
   background: #aaa;
   text-align: center;
@@ -30,7 +32,8 @@ h1 {
 
 .delete-db {
   margin: 15px;
-  width: 50%;
+  padding-top: 50px;
+  width: 40%;
   height: 300px;
   background: #aaa;
   padding-left: 50px;
