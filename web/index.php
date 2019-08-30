@@ -2,10 +2,15 @@
 
 require('../vendor/autoload.php');
 
-$GLOBALS['stdName'] = $_GET["name"];
-$GLOBALS['stdAge'] = $_GET["age"];
-$GLOBALS['stdGender'] = $_GET["gender"];
-$GLOBALS['stdPhone'] = $_GET["phone"];
+// $GLOBALS['stdName'] = $_GET["name"];
+// $GLOBALS['stdAge'] = $_GET["age"];
+// $GLOBALS['stdGender'] = $_GET["gender"];
+// $GLOBALS['stdPhone'] = $_GET["phone"];
+
+$GLOBALS['stdName'] = "Kaung Sett Thu";
+$GLOBALS['stdAge'] = 19;
+$GLOBALS['stdGender'] = "Male";
+$GLOBALS['stdPhone'] = "09 950249109";
 
 echo $GLOBALS['stdName'];
 
