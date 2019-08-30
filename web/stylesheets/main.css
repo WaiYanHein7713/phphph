@@ -1,10 +1,32 @@
 td {
   padding: 10px;
 }
+
 h1 {
   color: #f1f1f1;
 }
-.jumbotron {
+
+.insert-db {
+  width: 50%;
+  height: 300px;
+  background: yellow;
+  float: left;
+}
+
+.select-db {
+  width: 50%;
+  height: 150px;
+  background: blue;
+  float: left;
+}
+
+.delete-db {
+  width: 50%;
+  height: 150px;
+  background: red;
+  float: left;
+}
+/* .jumbotron {
   background: #532F8C;
   color: white;
   padding-bottom: 80px;
@@ -39,4 +61,4 @@ h1 {
 }
 .jumbotron .lang-logo img {
   max-width: 100%;
-}
+} */
