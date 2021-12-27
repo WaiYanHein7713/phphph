@@ -47,17 +47,17 @@ $app->get('/', function() use($app) {
 // Render database.twig file using the data
 
 $app->get('/display/', function() use($app) {
-  $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"CliName\" ASC");
+  $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
   $st->execute();
 
-  $CliName = array();
+  $StdName = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    $app['monolog']->addDebug('Row ' . $row['CliName']);
-    $CliName[] = $row;
+    $app['monolog']->addDebug('Row ' . $row['StdName']);
+    $StdName[] = $row;
   }
 
   return $app['twig']->render('database.twig', array(
-    'CliName' => $CliName
+    'StdName' => $StdName
   ));
 });
 
@@ -66,17 +66,17 @@ $app->get('/display/', function() use($app) {
 // Render database.twig file using the data
 
 $app->get('/male/', function() use($app) {
-  $st = $app['pdo']->prepare("SELECT * FROM students WHERE \"CliGender\" = 'Male' ORDER BY \"CliName\" ASC");
+  $st = $app['pdo']->prepare("SELECT * FROM students WHERE \"StdGender\" = 'Male' ORDER BY \"StdName\" ASC");
   $st->execute();
 
-  $CliName = array();
+  $StdName = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    $app['monolog']->addDebug('Row ' . $row['CliName']);
-    $CliName[] = $row;
+    $app['monolog']->addDebug('Row ' . $row['StdName']);
+    $StdName[] = $row;
   }
 
   return $app['twig']->render('database.twig', array(
-    'CliName' => $CliName
+    'StdName' => $StdName
   ));
 });
 
@@ -85,17 +85,17 @@ $app->get('/male/', function() use($app) {
 // Render database.twig file using the data
 
 $app->get('/female/', function() use($app) {
-  $st = $app['pdo']->prepare("SELECT * FROM students WHERE \"CliGender\" = 'Female' ORDER BY \"CliName\" ASC");
+  $st = $app['pdo']->prepare("SELECT * FROM students WHERE \"StdGender\" = 'Female' ORDER BY \"StdName\" ASC");
   $st->execute();
 
-  $CliName = array();
+  $StdName = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    $app['monolog']->addDebug('Row ' . $row['CliName']);
-    $CliName[] = $row;
+    $app['monolog']->addDebug('Row ' . $row['StdName']);
+    $StdName[] = $row;
   }
 
   return $app['twig']->render('database.twig', array(
-    'CliName' => $CliName
+    'StdName' => $StdName
   ));
 });
 
@@ -112,20 +112,20 @@ $app->get('/insert/', function() use($app) {
   $gender = $_GET["gender"];
   $phone = $_GET["phone"];
 
-  $st = $app['pdo']->prepare("INSERT INTO students (\"CliName\",\"CliAge\",\"CliGender\",\"CliPhone\") VALUES ('$name', $age, '$gender', '$phone')");
+  $st = $app['pdo']->prepare("INSERT INTO students (\"StdName\",\"StdAge\",\"StdGender\",\"StdPhone\") VALUES ('$name', $age, '$gender', '$phone')");
   $st->execute();
 
-  $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"CliName\" ASC");
+  $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
   $st->execute();
 
-  $CliName = array();
+  $StdName = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    $app['monolog']->addDebug('Row ' . $row['CliName']);
-    $CliName[] = $row;
+    $app['monolog']->addDebug('Row ' . $row['StdName']);
+    $StdName[] = $row;
   }
 
   return $app['twig']->render('database.twig', array(
-    'CliName' => $CliName
+    'StdName' => $StdName
   ));
 });
 
@@ -138,20 +138,20 @@ $app->get('/insert/', function() use($app) {
 $app->get('/delete/', function() use($app) {
   // $name = $GLOBALS['stdName'];
   $name = $_GET["name"];
-  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"CliName\" = '$name'");
+  $st = $app['pdo']->prepare("DELETE FROM students WHERE \"StdName\" = '$name'");
   $st->execute();
 
-  $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"CliName\" ASC");
+  $st = $app['pdo']->prepare("SELECT * FROM students ORDER BY \"StdName\" ASC");
   $st->execute();
 
-  $CliName = array();
+  $StdName = array();
   while ($row = $st->fetch(PDO::FETCH_ASSOC)) {
-    $app['monolog']->addDebug('Row ' . $row['CliName']);
-    $CliName[] = $row;
+    $app['monolog']->addDebug('Row ' . $row['StdName']);
+    $StdName[] = $row;
   }
 
   return $app['twig']->render('database.twig', array(
-    'CliName' => $CliName
+    'StdName' => $StdName
   ));
 });
 
