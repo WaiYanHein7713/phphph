@@ -86,7 +86,7 @@ input[type=submit] {
   text-align: center;
   margin: 18px;
 }
-.jumbotron {
+/* .jumbotron {
   background: #532F8C;
   color: white;
   padding-bottom: 80px;
@@ -121,4 +121,4 @@ input[type=submit] {
 }
 .jumbotron .lang-logo img {
   max-width: 100%;
-} 
+}  */
