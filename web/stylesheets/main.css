@@ -1,15 +1,15 @@
-/* body {
-  background: #777;
+body {
+  background: rgb(128, 64, 64);
 }
 
 table {
   padding-top: 80px;
-  background: #eee;
+  background: rgb(41, 39, 39);
 }
 
 th {
   font-weight: bolder;
-  background: #333;
+  background: rgb(197, 67, 27);
   color: #f1f1f1;
   text-align: center;
   padding: 12px;
@@ -86,7 +86,7 @@ input[type=submit] {
   text-align: center;
   margin: 18px;
 }
-/* .jumbotron {
+.jumbotron {
   background: #532F8C;
   color: white;
   padding-bottom: 80px;
@@ -121,4 +121,4 @@ input[type=submit] {
 }
 .jumbotron .lang-logo img {
   max-width: 100%;
-} */ */
+} 
